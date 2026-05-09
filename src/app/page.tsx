@@ -84,6 +84,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Jurisdictional Intelligence Map */}
+      <section className="py-24 bg-judicial text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
+          {/* Simulated Map Background */}
+          <div className="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] [background-size:40px_40px]" />
+        </div>
+        <div className="container px-6 relative z-10">
+          <div className="mb-20">
+            <span className="text-slate-gold font-black uppercase tracking-[0.3em] text-[10px] mb-4 block">Global Coverage</span>
+            <h2 className="text-5xl font-black uppercase tracking-tighter mb-8">Jurisdictional <br />Intelligence.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { region: "Americas", status: "STRICT", info: "SEC Compliance & Silicon Valley Tech Regulation Hub." },
+              { region: "European Union", status: "ACTIVE", info: "GDPR Mastery & Digital Sovereignty Frameworks." },
+              { region: "APAC Region", status: "EMERGING", info: "Cross-Border Trade Law & IP Protection Intelligence." }
+            ].map((zone, i) => (
+              <div key={i} className="border-l border-white/10 pl-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-2 h-2 rounded-full bg-slate-gold animate-pulse" />
+                  <span className="text-sm font-bold uppercase tracking-widest text-slate-gold">{zone.region}</span>
+                </div>
+                <div className="text-[10px] font-black mb-4 uppercase tracking-[0.3em] text-white/40">Status: {zone.status}</div>
+                <p className="text-slate-400 text-sm leading-relaxed mb-8">{zone.info}</p>
+                <Link href="/briefing" className="text-[9px] font-black uppercase tracking-widest text-white hover:text-slate-gold transition-colors">Review Region Profile</Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Deep Intelligence Section (AdSense Bait) */}
       <section className="py-24 bg-marble">
         <div className="container px-6 grid grid-cols-1 lg:grid-cols-3 gap-12">

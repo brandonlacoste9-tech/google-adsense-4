@@ -46,6 +46,26 @@ export default function Contact() {
                 <input type="email" className="w-full bg-white border border-slate-200 px-6 py-4 text-sm outline-none focus:border-judicial transition-all" />
               </div>
             </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Jurisdiction</label>
+                <select className="w-full bg-white border border-slate-200 px-6 py-4 text-sm outline-none focus:border-judicial transition-all">
+                  <option>US Federal</option>
+                  <option>EU / GDPR</option>
+                  <option>APAC Region</option>
+                  <option>Cross-Border / International</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Client Classification</label>
+                <select className="w-full bg-white border border-slate-200 px-6 py-4 text-sm outline-none focus:border-judicial transition-all">
+                  <option>Corporate Enterprise</option>
+                  <option>Legal Counsel / Law Firm</option>
+                  <option>Government / Regulatory</option>
+                  <option>Academic / Research</option>
+                </select>
+              </div>
+            </div>
             <div className="space-y-2">
               <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Regulatory Domain</label>
               <select className="w-full bg-white border border-slate-200 px-6 py-4 text-sm outline-none focus:border-judicial transition-all">
@@ -53,13 +73,14 @@ export default function Contact() {
                 <option>Corporate Compliance</option>
                 <option>Tech Regulation</option>
                 <option>Data Sovereignty</option>
+                <option>Antitrust & Competition</option>
               </select>
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Inquiry Brief</label>
+              <label className="text-[10px] font-black uppercase tracking-widest text-slate-500">Matter Classification / Inquiry Brief</label>
               <textarea rows={4} className="w-full bg-white border border-slate-200 px-6 py-4 text-sm outline-none focus:border-judicial transition-all" />
             </div>
-            <button className="btn-judicial w-full py-5 text-xs">Transmit Inquiry</button>
+            <button className="btn-judicial w-full py-5 text-xs">Transmit Inquiry to Board</button>
           </form>
         </div>
       </div>
