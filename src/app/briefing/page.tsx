@@ -96,7 +96,7 @@ export default function Briefing() {
               <button className="w-full border border-white/20 py-4 font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-judicial transition-all">Download Dataset</button>
             </div>
             <AdSlot type="sidebar" />
-          </div>
+          </aside>
         </div>
       </div>
     </main>
