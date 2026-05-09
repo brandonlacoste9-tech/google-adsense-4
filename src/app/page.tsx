@@ -1,4 +1,5 @@
 import { Scale, ShieldCheck, Briefcase, FileText, Gavel, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import AdSlot from "@/components/AdSlot";
 
 export default function Home() {
@@ -14,15 +15,15 @@ export default function Home() {
       {/* Institutional Navigation */}
       <nav className="bg-judicial text-white py-6">
         <div className="container flex justify-between items-center px-6">
-          <div className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Scale size={24} className="text-slate-gold" />
             <span className="font-black tracking-tighter text-xl uppercase">Legal<span className="text-slate-gold">Nexus</span></span>
-          </div>
+          </Link>
           <div className="hidden md:flex gap-10 text-[10px] font-black uppercase tracking-[0.2em]">
-            <a href="#" className="hover:text-slate-gold transition-colors">Compliance</a>
-            <a href="#" className="hover:text-slate-gold transition-colors">Repository</a>
-            <a href="#" className="hover:text-slate-gold transition-colors">Counsel</a>
-            <a href="#" className="hover:text-slate-gold transition-colors">About</a>
+            <Link href="/briefing" className="hover:text-slate-gold transition-colors">Compliance</Link>
+            <Link href="/briefing" className="hover:text-slate-gold transition-colors">Repository</Link>
+            <Link href="/contact" className="hover:text-slate-gold transition-colors">Counsel</Link>
+            <Link href="/about" className="hover:text-slate-gold transition-colors">About</Link>
           </div>
           <button className="btn-judicial py-3 text-[10px]">Client Terminal</button>
         </div>
@@ -43,8 +44,8 @@ export default function Home() {
               Legal Nexus is the definitive repository for corporate counsel, providing institutional-grade analysis on global regulatory shifts and intellectual property protection.
             </p>
             <div className="flex flex-wrap gap-4">
-              <button className="btn-judicial">Explore Case Studies</button>
-              <button className="px-8 py-4 border-2 border-judicial font-black text-[10px] uppercase tracking-widest hover:bg-judicial hover:text-white transition-all">Review Reports</button>
+              <Link href="/briefing" className="btn-judicial">Explore Case Studies</Link>
+              <Link href="/briefing" className="px-8 py-4 border-2 border-judicial font-black text-[10px] uppercase tracking-widest hover:bg-judicial hover:text-white transition-all">Review Reports</Link>
             </div>
           </div>
         </div>
@@ -74,9 +75,9 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg font-black mb-4 uppercase tracking-tight text-judicial">{area.title}</h3>
                 <p className="text-sm text-slate-500 leading-relaxed mb-8">{area.desc}</p>
-                <a href="#" className="text-[10px] font-black uppercase tracking-widest text-judicial flex items-center gap-2 group-hover:gap-4 transition-all">
+                <Link href="/briefing" className="text-[10px] font-black uppercase tracking-widest text-judicial flex items-center gap-2 group-hover:gap-4 transition-all">
                   Full Brief <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -94,13 +95,13 @@ export default function Home() {
               "Cyber Liability: The Legal Implications of Data Breaches",
               "Privacy Mandates: Understanding the Global Sovereignty Act"
             ].map((title, i) => (
-              <article key={i} className="flex gap-8 group cursor-pointer">
+              <Link href="/briefing" key={i} className="flex gap-8 group cursor-pointer border-b border-slate-200 pb-12 last:border-0">
                 <div className="text-4xl font-black text-slate-200 group-hover:text-slate-gold transition-colors">0{i+1}</div>
                 <div>
                   <h4 className="text-xl font-bold text-judicial mb-2 group-hover:translate-x-2 transition-transform">{title}</h4>
                   <p className="text-sm text-slate-500 max-w-xl leading-relaxed">Detailed analysis of the upcoming changes to international legal standards and how they affect multi-national operations.</p>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
           
@@ -131,17 +132,17 @@ export default function Home() {
           <div>
             <h5 className="text-[10px] font-black uppercase tracking-[0.3em] mb-8 text-slate-gold">Legal</h5>
             <ul className="space-y-4 text-xs text-slate-400">
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Use</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Disclaimers</a></li>
+              <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link></li>
+              <li><Link href="/disclaimer" className="hover:text-white transition-colors">Disclaimers</Link></li>
             </ul>
           </div>
           <div>
             <h5 className="text-[10px] font-black uppercase tracking-[0.3em] mb-8 text-slate-gold">Support</h5>
             <ul className="space-y-4 text-xs text-slate-400">
-              <li><a href="#" className="hover:text-white transition-colors">Contact Counsel</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Intelligence Repo</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Media Kit</a></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Counsel</Link></li>
+              <li><Link href="/briefing" className="hover:text-white transition-colors">Intelligence Repo</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">About Institutional</Link></li>
             </ul>
           </div>
         </div>

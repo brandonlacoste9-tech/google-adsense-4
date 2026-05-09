@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Link from "next/link";
+import MarketTicker from "@/components/MarketTicker";
 
 export const metadata: Metadata = {
-  title: "Legal Nexus | Premier Corporate Law & Compliance Intelligence",
-  description: "The definitive repository for institutional legal analysis, intellectual property protection, and global regulatory compliance.",
+  title: "Legal Nexus | Institutional Regulatory Intelligence & Counsel",
+  description: "The premier repository for global regulatory analysis, intellectual property protection, and corporate compliance intelligence.",
+  other: {
+    "google-adsense-account": "ca-pub-4276130467303652"
+  }
 };
 
 export default function RootLayout({
@@ -23,8 +25,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className={inter.className}>
-        {children}
+      <body className="bg-white">
+        <MarketTicker />
+        <div className="flex flex-col pt-[44px]">
+          {children}
+        </div>
       </body>
     </html>
   );
