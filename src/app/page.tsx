@@ -25,7 +25,7 @@ export default function Home() {
             <Link href="/contact" className="hover:text-slate-gold transition-colors">Counsel</Link>
             <Link href="/about" className="hover:text-slate-gold transition-colors">About</Link>
           </div>
-          <button className="btn-judicial py-3 text-[10px]">Client Terminal</button>
+          <Link href="/contact" className="btn-judicial py-3 text-[10px]">Client Terminal</Link>
         </div>
       </nav>
 
@@ -121,15 +121,15 @@ export default function Home() {
           <div className="lg:col-span-2 space-y-12">
             <h2 className="text-3xl font-black uppercase tracking-tighter text-judicial">Latest Legal Briefs</h2>
             {[
-              "Global Compliance Shift: The 2026 Regulatory Outlook",
-              "AI & Copyright: Navigating the New Frontier of IP Law",
-              "Cyber Liability: The Legal Implications of Data Breaches",
-              "Privacy Mandates: Understanding the Global Sovereignty Act"
-            ].map((title, i) => (
-              <Link href="/briefing" key={i} className="flex gap-8 group cursor-pointer border-b border-slate-200 pb-12 last:border-0">
+              { title: "Global Compliance Shift: The 2026 Regulatory Outlook", slug: "outlook-2026" },
+              { title: "Neural Authorship: The Supreme Court's AI IP Mandate", slug: "ai-authorship" },
+              { title: "Quantum Breach: The New Standard for Cyber Liability", slug: "cyber-liability" },
+              { title: "The Sovereignty Act: National Data Borders in 2026", slug: "privacy-sovereignty" }
+            ].map((report, i) => (
+              <Link href={`/briefing/${report.slug}`} key={i} className="flex gap-8 group cursor-pointer border-b border-slate-200 pb-12 last:border-0">
                 <div className="text-4xl font-black text-slate-200 group-hover:text-slate-gold transition-colors">0{i+1}</div>
                 <div>
-                  <h4 className="text-xl font-bold text-judicial mb-2 group-hover:translate-x-2 transition-transform">{title}</h4>
+                  <h4 className="text-xl font-bold text-judicial mb-2 group-hover:translate-x-2 transition-transform">{report.title}</h4>
                   <p className="text-sm text-slate-500 max-w-xl leading-relaxed">Detailed analysis of the upcoming changes to international legal standards and how they affect multi-national operations.</p>
                 </div>
               </Link>
